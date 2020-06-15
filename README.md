@@ -17,8 +17,6 @@
    - Ajax, XHR
    - ECMA Script 6+, 새로 추가된 기능
 
----
-
 ### 기본적인 개발 스킬
 
 1. GIT
