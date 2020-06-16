@@ -25,3 +25,22 @@
 4. 터미널 사용법
 5. 자료구조 / 알고리즘
 6. 디자인 패턴
+
+### REACT
+
+#### 빌드도구
+
+1. webpack
+2. Rollup
+3. Parcel
+
+#### 패키지 관리자
+
+- NPM
+- YARN
+- pnpm
+
+#### 테스크러너
+
+- npm script
+- gulp
