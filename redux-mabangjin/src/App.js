@@ -1,14 +1,14 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import welcomPage from "./pages/welcomPage";
-import mabangjinPage from "./pages/mabangjinPage";
+import WelcomPage from "./pages/WelcomPage";
+import MabangjinPage from "./pages/MabangjinPage";
 
 const App = () => {
   return (
     <React.Fragment>
       <Switch>
-        <Route exact path="/" component={welcomPage} />
-        <Route path="/mabangjin" component={mabangjinPage} />
+        <Route exact path="/" component={WelcomPage} />
+        <Route path="/mabangjin" component={MabangjinPage} />
       </Switch>
     </React.Fragment>
   );

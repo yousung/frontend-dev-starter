@@ -1,7 +1,7 @@
 import React from "react";
 
-const mabangjinPage = () => {
+const MabangjinPage = () => {
   return <div>마방진 페이지</div>;
 };
 
-export default mabangjinPage;
+export default MabangjinPage;
