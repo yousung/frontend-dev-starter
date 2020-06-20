@@ -4,6 +4,23 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import { createStore, combineReducers } from 'redux';
+import timeline, {
+  addTimeline,
+  removeTimeline,
+  editTimeline,
+  increaseNextPage,
+} from './timeline/state';
+
+import friend, { addFriend, removeFriend, editFriend } from './friend/state';
+
+const rootReucer = combineReducers({
+  timeline,
+  friend,
+});
+
+const store = createStore(rootReucer);
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
