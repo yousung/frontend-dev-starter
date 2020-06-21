@@ -9,8 +9,8 @@ import FriendMain from './friend/container/FriendMain';
 
 ReactDOM.render(
   <Provider store={store}>
-    <FriendMain />
-    <TimelineMain />
+    <FriendMain ageLimit={30} />
+    <TimelineMain ageLimit={15} />
   </Provider>,
   document.getElementById('root')
 );

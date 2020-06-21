@@ -1,7 +1,7 @@
 const friends = [
   { name: '홍길동', age: 15 },
-  { name: '고길동', age: 40 },
-  { name: '둘리', age: 33 },
+  { name: '고길동', age: 30 },
+  { name: '둘리', age: 2 },
   { name: '마이콜', age: 22 },
   { name: '네티', age: 15 },
 ];
