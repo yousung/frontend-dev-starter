@@ -1,39 +1,37 @@
 import React, { PureComponent } from 'react';
-import store from '../../common/store';
 import { getNextFriend } from '../../common/mockData';
-import { addFriend } from '../state';
+import * as actions from '../state';
 import FriendList from '../component/FriendList';
+import { connect } from 'react-redux';
 
-export default class FriendMain extends PureComponent {
-  state = {
-    friends: store.getState().friend.friends,
-  };
-
-  componentDidMount() {
-    this.unsubscribe = store.subscribe(() =>
-      this.setState({
-        friends: store.getState().friend.friends,
-      })
-    );
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe();
-  }
-
+class FriendMain extends PureComponent {
   onAdd = () => {
     const friend = getNextFriend();
-    store.dispatch(addFriend(friend));
+    this.props.addFriend(friend);
   };
 
   render() {
     console.log('FriendMain render');
-
+    const { friends } = this.props;
     return (
       <div>
         <button onClick={this.onAdd}>친구 추가</button>
-        <FriendList friends={this.state.friends} />
+        <FriendList friends={friends} />
       </div>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return { friends: state.friend.friends };
+};
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     addFriend: (friend) => {
+//       dispatch(addFriend(friend));
+//     },
+//   };
+// };
+
+export default connect(mapStateToProps, actions)(FriendMain);
