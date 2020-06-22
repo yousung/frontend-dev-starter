@@ -11,11 +11,15 @@ const reducer = combineReducers({
 
 const sagaMiddleware = createSagaMiddleware();
 
+console.log(!!window.__REDUX_DEVTOOLS_EXTENSION__);
+
 const store = createStore(
   reducer,
   compose(
     applyMiddleware(sagaMiddleware),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    !!window.__REDUX_DEVTOOLS_EXTENSION__
+      ? window.__REDUX_DEVTOOLS_EXTENSION__()
+      : (f) => f
   )
 );
 
