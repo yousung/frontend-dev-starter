@@ -18,3 +18,9 @@
 6. typescript
 
 7. react hook
+
+## start
+
+```shell
+$ yarn && yarn start
+```
