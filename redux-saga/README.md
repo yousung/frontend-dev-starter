@@ -12,3 +12,9 @@
 ~~3. 사가 도입~~
 
 ~~4. debounce 추가~~
+
+5. 테스트 코드 작성
+
+6. typescript
+
+7. react hook
