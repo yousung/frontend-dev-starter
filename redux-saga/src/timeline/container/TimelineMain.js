@@ -41,7 +41,7 @@ class TimelineMain extends Component {
         {!!error && <p>에러 발생...</p>}
 
         <input type='text' value={currentText} onChange={this.onChangeText} />
-        {!!text && <p>{text}</p>}
+        {!!text && <p>text: {text}</p>}
       </div>
     );
   }

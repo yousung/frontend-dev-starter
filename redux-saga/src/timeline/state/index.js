@@ -43,7 +43,7 @@ const reducer = createReducer(INITIAL_STATE, {
   },
   [types.SET_LOADING]: (state, action) => (state.isLoading = action.isLoading),
   [types.SET_ERROR]: (state, action) => (state.error = action.error),
-  [types.TRY_SET_TEXT]: (state, action) => (state.text = action.text),
+  [types.SET_TEXT]: (state, action) => (state.text = action.text),
 });
 
 const reducers = [reducer, timelineReudcer];
