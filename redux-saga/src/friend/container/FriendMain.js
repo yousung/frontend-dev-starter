@@ -1,14 +1,11 @@
-import React, { Component } from "react";
-import { getNextFriend } from "../../common/mockData";
-import * as actions from "../state";
-import {
-  getFriendsWithAgeLimit,
-  makeGetFriendsWithAgeLimit,
-} from "../state/selector";
-import FriendList from "../component/FriendList";
+import React, { Component } from 'react';
+import { getNextFriend } from '../../common/mockData';
+import * as actions from '../state';
+import { makeGetFriendsWithAgeLimit } from '../state/selector';
+import FriendList from '../component/FriendList';
 // import NumberSelect from "../component/NumberSelect";
 // import { MAX_AGE_LIMIT, MAX_SHOW_LIMIT } from "../common";
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
 class FriendMain extends Component {
   onAdd = () => {
@@ -17,7 +14,7 @@ class FriendMain extends Component {
   };
 
   render() {
-    console.log("FriendMain render");
+    console.log('FriendMain render');
     const { friendsWithAgeLimit } = this.props;
 
     return (

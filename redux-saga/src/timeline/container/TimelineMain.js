@@ -6,6 +6,16 @@ import { connect } from 'react-redux';
 import ClipLoader from 'react-spinners/ClipLoader';
 
 class TimelineMain extends Component {
+  state = {
+    currentText: '',
+  };
+
+  onChangeText = (e) => {
+    const text = e.currentTarget.value;
+    this.props.trySetText(text);
+    this.setState({ currentText: text });
+  };
+
   onAdd = () => {
     const timeline = getNextTimeline();
     this.props.addTimeline(timeline);
@@ -21,24 +31,29 @@ class TimelineMain extends Component {
   render() {
     console.log('timeline main render');
 
-    const { timelines, isLoading, error } = this.props;
+    const { timelines, isLoading, error, text } = this.props;
+    const { currentText } = this.state;
     return (
       <div>
         <button onClick={this.onAdd}>타임라인 추가</button>
         <TimelineList timelines={timelines} onLike={this.onLike} />
         <ClipLoader size={150} color={'black'} loading={!!isLoading} />
         {!!error && <p>에러 발생...</p>}
+
+        <input type='text' value={currentText} onChange={this.onChangeText} />
+        {!!text && <p>{text}</p>}
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  const { timelines, isLoading, error } = state.timeline;
+  const { timelines, isLoading, error, text } = state.timeline;
   return {
     timelines,
     isLoading,
     error,
+    text,
   };
 };
 
