@@ -1,9 +1,0 @@
-{
-  "extends": ["react-app"],
-  "rules": {
-    "implicit-arrow-linebreak": "off",
-    "no-extra-boolean-cast" : "off",
-    "no-param-reassign": "off",
-    "no-plusplus" : "off"
-  }
-}

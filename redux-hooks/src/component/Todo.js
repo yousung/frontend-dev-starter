@@ -1,19 +1,21 @@
-import React from 'react';
+import React from "react";
 
-const Todo = ({ id, text, done, onToggle, onDelete }) => {
+const Todo = ({ id, todo, done, onToggle, onRmove }) => {
   return (
     <div>
+      <span>
+        {todo} : {done ? "Y" : "N"}
+      </span>
       <button
         onClick={() => {
           onToggle(id);
         }}
-        style={{ textDecoration: done ? 'line-through' : 'none' }}
       >
-        {text}
+        Toggle
       </button>
       <button
         onClick={() => {
-          onDelete(id);
+          onRmove(id);
         }}
       >
         삭제
