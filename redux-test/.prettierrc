@@ -1,7 +1,8 @@
 {
   "arrowParens": "always",
-  "bracketSpacing": false,
+  "bracketSpacing": true,
   "endOfLine": "auto",
+  "objectCurlySpacing" : true,
   "htmlWhitespaceSensitivity": "css",
   "jsxBracketSameLine": false,
   "jsxSingleQuote": false,
