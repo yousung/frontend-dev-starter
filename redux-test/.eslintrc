@@ -1,0 +1,7 @@
+{
+  "extends": ["airbnb", "airbnb/hooks"],
+  "rules": {
+    "implicit-arrow-linebreak": "off",
+    "no-extra-boolean-cast" : "off"
+  }
+}
