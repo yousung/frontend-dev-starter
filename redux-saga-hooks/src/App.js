@@ -1,23 +1,22 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import PoketmonContainer from './container/PoketmonContainer';
+import {useSelector} from 'react-redux';
 
 function App() {
+  const {isLoading} = useSelector((state) => state.common, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {isLoading ? (
+          <div className="App-logo-background">
+            <img src={logo} className="App-logo" alt="logo" />
+          </div>
+        ) : null}
+
+        <PoketmonContainer />
       </header>
     </div>
   );
