@@ -15,6 +15,7 @@ const PoketmonContainer = () => {
 
   const onChangePage = ({currentTarget: {value}}) => {
     dispatch(actions.setLimit(value));
+    dispatch(actions.setPage(1));
   };
 
   const nextPage = () => {

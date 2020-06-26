@@ -1,11 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import DialogMessage from './component/DialogMessage';
 import PoketmonContainer from './container/PoketmonContainer';
 import {useSelector} from 'react-redux';
 
 function App() {
-  const {isLoading} = useSelector((state) => state.common, []);
+  const {isLoading, message} = useSelector((state) => state.common, []);
 
   return (
     <div className="App">
@@ -17,6 +18,8 @@ function App() {
         ) : null}
 
         <PoketmonContainer />
+
+        {message && <DialogMessage message={message} />}
       </header>
     </div>
   );
