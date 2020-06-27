@@ -3,6 +3,7 @@ import Poketmon from '../component/Poketmon';
 import {actions} from '../module/poketmon';
 import {useDispatch, useSelector} from 'react-redux';
 import PoketmonPage from '../component/PoketmonPage';
+import styled from "styled-components";
 
 const PoketmonContainer = () => {
   const dispatch = useDispatch();
@@ -10,6 +11,7 @@ const PoketmonContainer = () => {
 
   useEffect(() => {
     dispatch(actions.callPoketmonList());
+    document.title = `포켓몬도감 - page ${page}`;
   }, [limit, page]);
 
 
@@ -23,13 +25,21 @@ const PoketmonContainer = () => {
         <PoketmonPage count={Math.ceil(list.length / limit)} page={page} setPage={setPage} />
       </div>
 
-      <div>
+      <PoketmonBox>
         {poketmons.map((poketmon) => (
           <Poketmon key={poketmon.name} poketmon={poketmon} />
         ))}
-      </div>
+      </PoketmonBox>
     </div>
   );
 };
 
 export default PoketmonContainer;
+
+
+const PoketmonBox = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 720px;
+  justify-content: center;
+`

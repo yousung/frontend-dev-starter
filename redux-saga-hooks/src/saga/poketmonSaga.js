@@ -1,4 +1,4 @@
-import {all, call, put, fork, take, select} from 'redux-saga/effects';
+import {all, call, put, fork, take, select, delay} from 'redux-saga/effects';
 import {
   actions as poketmonActions,
   types as poketmonTypes,
@@ -10,7 +10,8 @@ export function* fetchData(_) {
   while (true) {
     yield take(poketmonTypes.CALL_POKETMON_LIST);
     yield put(commonActions.setLoading(true));
-    yield put(commonActions.showMessage('정보를 불러오는 중'));
+    yield put(commonActions.showMessage('로딩중'))
+    yield delay(200);
     const {
       poketmon: {limit, page, list},
     } = yield select();

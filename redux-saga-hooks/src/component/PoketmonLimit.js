@@ -20,13 +20,13 @@ const PoketmonSelect = styled(Select)`
 const PoketmonLimit = ({changePage, initValue}) => {
   return (
     <PoketmonLimitDiv>
-    <PoketmonSelect onChange={changePage} value={initValue}>
-      {pages.map((page) => (
-        <MenuItem key={page} value={page}>
-          {page}
-        </MenuItem>
-      ))}
-    </PoketmonSelect>
+      <PoketmonSelect onChange={changePage} value={initValue}>
+        {pages.map((limit) => (
+          <MenuItem key={limit} value={limit}>
+            {limit}
+          </MenuItem>
+        ))}
+      </PoketmonSelect>
     </PoketmonLimitDiv>
   );
 };

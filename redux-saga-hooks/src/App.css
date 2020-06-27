@@ -8,14 +8,20 @@
   height: 100%;
   background : black;
   display: flex;
-  justify-content: center;
-  align-items: center;
   opacity: 0.5;
+  z-index: 400;
 }
 
 .App-logo {
+  position: fixed;
+  z-index: 500;
   height: 40vmin;
   pointer-events: none;
+  margin: auto auto;
+  top : 0;
+  bottom : 0;
+  left: 0;
+  right: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
