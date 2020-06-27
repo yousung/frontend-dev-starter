@@ -1,8 +1,7 @@
-import React from 'react';
 import axios from 'axios';
 
-const BASE_API = 'https://pokeapi.co/api/v2';
+const JSON_API = 'https://raw.githubusercontent.com/intelcoder/PokemonGO-Pokedex-Korean/master/pokedex-korean.json';
 
 export default {
-  getPoketmon: (params) => axios.get(`${BASE_API}/pokemon`, {params}),
+  getPoketmons : () => axios.get(JSON_API),
 };

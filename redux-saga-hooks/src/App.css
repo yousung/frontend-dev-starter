@@ -26,7 +26,7 @@
 
 .App-header {
   position: relative;
-  background-color: #282c34;
+  background-color: ivory;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -53,7 +53,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f5f5f5da;
+  background: #181818;
   opacity: 0.5;
   position: absolute;
   width: 200px;
@@ -63,5 +63,5 @@
 }
 
 .dialog-message {
-  color :#181818;
+  color :whitesmoke;
 }

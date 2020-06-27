@@ -12,11 +12,19 @@ export function* fetchData(_) {
     yield put(commonActions.setLoading(true));
     yield put(commonActions.showMessage('정보를 불러오는 중'));
     const {
-      poketmon: {limit, page},
+      poketmon: {limit, page, list},
     } = yield select();
-    const {
-      data: {results},
-    } = yield call(() => api.getPoketmon({limit, offset: limit * (page - 1)}));
+
+    // 기존에 등록된 포켓몬이 없을 경우 API 를 불러옴
+    let poketmons = list;
+    if(!list.length) {
+      const { data } = yield call(() => api.getPoketmons());
+      poketmons = data;
+      yield put(poketmonActions.setList(poketmons));
+    }
+
+    const start = (limit * (page - 1));
+    const results = poketmons.slice(start, start + limit);
     yield put(poketmonActions.setPoketmonList(results));
     yield put(commonActions.showMessage('로딩완료'));
     yield put(commonActions.setLoading(false));
