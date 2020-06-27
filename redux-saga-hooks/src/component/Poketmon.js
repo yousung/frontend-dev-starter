@@ -7,7 +7,7 @@ const Poketmon = ({poketmon}) => {
   return(
     <Card>
       <ImageBox>
-        <Number>{poketmon.num}</Number>
+        <Number>No. {poketmon.num}</Number>
         <Image src={`https://www.serebii.net/swordshield/pokemon/${poketmon.num}.png`} />
         <Name>{poketmon.name}</Name>
       </ImageBox>
